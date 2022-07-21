@@ -1,6 +1,6 @@
 <?php
 
-namespace SolanaPhpSdk;
+namespace He426100\SolanaPhpSdk;
 
 use Hyperf\Guzzle\ClientFactory;
 use Psr\Http\Message\ResponseInterface;

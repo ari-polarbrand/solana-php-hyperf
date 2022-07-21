@@ -65,7 +65,7 @@ class Connection extends Program
      * @param Transaction $transaction
      * @param Keypair[] $signers
      * @param array $params
-     * @return array|\Illuminate\Http\Client\Response
+     * @return array
      * @throws Exceptions\GenericException
      * @throws Exceptions\InvalidIdResponseException
      * @throws Exceptions\MethodNotFoundException

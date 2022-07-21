@@ -4,7 +4,7 @@ namespace He426100\SolanaPhpSdk;
 
 use ParagonIE_Sodium_Compat;
 use RangeException;
-use StephenHill\Base58;
+use Tuupola\Base58;
 use He426100\SolanaPhpSdk\Exceptions\BaseSolanaPhpSdkException;
 use He426100\SolanaPhpSdk\Exceptions\InputValidationException;
 use He426100\SolanaPhpSdk\Util\Buffer;
@@ -211,7 +211,7 @@ class PublicKey implements HasPublicKey
      */
     public static function base58(): Base58
     {
-        return new Base58();
+        return new Base58(["characters" => Base58::BITCOIN]);
     }
 
     public function getPublicKey(): PublicKey
