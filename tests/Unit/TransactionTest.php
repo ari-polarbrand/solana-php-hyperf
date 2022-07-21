@@ -1,18 +1,18 @@
 <?php
 
-namespace Tighten\SolanaPhpSdk\Tests\Unit;
+namespace He426100\SolanaPhpSdk\Tests\Unit;
 
-use Tighten\SolanaPhpSdk\Keypair;
-use Tighten\SolanaPhpSdk\Message;
-use Tighten\SolanaPhpSdk\Programs\SystemProgram;
-use Tighten\SolanaPhpSdk\PublicKey;
-use Tighten\SolanaPhpSdk\Tests\TestCase;
-use Tighten\SolanaPhpSdk\Transaction;
-use Tighten\SolanaPhpSdk\TransactionInstruction;
-use Tighten\SolanaPhpSdk\Util\AccountMeta;
-use Tighten\SolanaPhpSdk\Util\Buffer;
-use Tighten\SolanaPhpSdk\Util\CompiledInstruction;
-use Tighten\SolanaPhpSdk\Util\MessageHeader;
+use He426100\SolanaPhpSdk\Keypair;
+use He426100\SolanaPhpSdk\Message;
+use He426100\SolanaPhpSdk\Programs\SystemProgram;
+use He426100\SolanaPhpSdk\PublicKey;
+use He426100\SolanaPhpSdk\Tests\TestCase;
+use He426100\SolanaPhpSdk\Transaction;
+use He426100\SolanaPhpSdk\TransactionInstruction;
+use He426100\SolanaPhpSdk\Util\AccountMeta;
+use He426100\SolanaPhpSdk\Util\Buffer;
+use He426100\SolanaPhpSdk\Util\CompiledInstruction;
+use He426100\SolanaPhpSdk\Util\MessageHeader;
 
 class TransactionTest extends TestCase
 {

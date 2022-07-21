@@ -1,6 +1,6 @@
 <?php
 
-namespace Tighten\SolanaPhpSdk\Borsh;
+namespace He426100\SolanaPhpSdk\Borsh;
 
 trait BorshSerializable
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace Tighten\SolanaPhpSdk\Util;
+namespace He426100\SolanaPhpSdk\Util;
 
-use Tighten\SolanaPhpSdk\Exceptions\InputValidationException;
+use He426100\SolanaPhpSdk\Exceptions\InputValidationException;
 
 class Commitment
 {

@@ -1,10 +1,10 @@
 <?php
 
-namespace Tighten\SolanaPhpSdk\Tests\Unit;
+namespace He426100\SolanaPhpSdk\Tests\Unit;
 
-use Tighten\SolanaPhpSdk\Account;
-use Tighten\SolanaPhpSdk\Keypair;
-use Tighten\SolanaPhpSdk\Tests\TestCase;
+use He426100\SolanaPhpSdk\Account;
+use He426100\SolanaPhpSdk\Keypair;
+use He426100\SolanaPhpSdk\Tests\TestCase;
 
 class AccountTest extends TestCase
 {

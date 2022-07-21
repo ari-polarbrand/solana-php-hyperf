@@ -1,6 +1,6 @@
 <?php
 
-namespace Tighten\SolanaPhpSdk\Util;
+namespace He426100\SolanaPhpSdk\Util;
 
 class ShortVec
 {

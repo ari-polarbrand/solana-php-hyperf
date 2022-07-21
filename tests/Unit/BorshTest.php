@@ -1,10 +1,10 @@
 <?php
 
-namespace Tighten\SolanaPhpSdk\Tests\Unit;
+namespace He426100\SolanaPhpSdk\Tests\Unit;
 
-use Tighten\SolanaPhpSdk\Borsh\Borsh;
-use Tighten\SolanaPhpSdk\Borsh\BorshObject;
-use Tighten\SolanaPhpSdk\Tests\TestCase;
+use He426100\SolanaPhpSdk\Borsh\Borsh;
+use He426100\SolanaPhpSdk\Borsh\BorshObject;
+use He426100\SolanaPhpSdk\Tests\TestCase;
 
 class Test {
     use BorshObject;

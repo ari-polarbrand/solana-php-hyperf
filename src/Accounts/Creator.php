@@ -1,8 +1,8 @@
 <?php
 
-namespace Tighten\SolanaPhpSdk\Accounts;
+namespace He426100\SolanaPhpSdk\Accounts;
 
-use Tighten\SolanaPhpSdk\Borsh;
+use He426100\SolanaPhpSdk\Borsh;
 
 class Creator
 {

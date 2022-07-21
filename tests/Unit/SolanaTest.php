@@ -1,12 +1,12 @@
 <?php
 
-namespace Tighten\SolanaPhpSdk\Tests\Unit;
+namespace He426100\SolanaPhpSdk\Tests\Unit;
 
 use Illuminate\Support\Facades\Http;
-use Tighten\SolanaPhpSdk\Exceptions\GenericException;
-use Tighten\SolanaPhpSdk\Programs\SystemProgram;
-use Tighten\SolanaPhpSdk\SolanaRpcClient;
-use Tighten\SolanaPhpSdk\Tests\TestCase;
+use He426100\SolanaPhpSdk\Exceptions\GenericException;
+use He426100\SolanaPhpSdk\Programs\SystemProgram;
+use He426100\SolanaPhpSdk\SolanaRpcClient;
+use He426100\SolanaPhpSdk\Tests\TestCase;
 
 class SolanaTest extends TestCase
 {

@@ -1,19 +1,19 @@
 <?php
 
-namespace Tighten\SolanaPhpSdk;
+namespace He426100\SolanaPhpSdk;
 
-use Tighten\SolanaPhpSdk\Exceptions\GenericException;
-use Tighten\SolanaPhpSdk\Exceptions\InputValidationException;
-use Tighten\SolanaPhpSdk\Util\AccountMeta;
-use Tighten\SolanaPhpSdk\Util\Buffer;
-use Tighten\SolanaPhpSdk\Util\CompiledInstruction;
-use Tighten\SolanaPhpSdk\Util\HasPublicKey;
-use Tighten\SolanaPhpSdk\Util\HasSecretKey;
-use Tighten\SolanaPhpSdk\Util\MessageHeader;
-use Tighten\SolanaPhpSdk\Util\NonceInformation;
-use Tighten\SolanaPhpSdk\Util\ShortVec;
-use Tighten\SolanaPhpSdk\Util\SignaturePubkeyPair;
-use Tighten\SolanaPhpSdk\Util\Signer;
+use He426100\SolanaPhpSdk\Exceptions\GenericException;
+use He426100\SolanaPhpSdk\Exceptions\InputValidationException;
+use He426100\SolanaPhpSdk\Util\AccountMeta;
+use He426100\SolanaPhpSdk\Util\Buffer;
+use He426100\SolanaPhpSdk\Util\CompiledInstruction;
+use He426100\SolanaPhpSdk\Util\HasPublicKey;
+use He426100\SolanaPhpSdk\Util\HasSecretKey;
+use He426100\SolanaPhpSdk\Util\MessageHeader;
+use He426100\SolanaPhpSdk\Util\NonceInformation;
+use He426100\SolanaPhpSdk\Util\ShortVec;
+use He426100\SolanaPhpSdk\Util\SignaturePubkeyPair;
+use He426100\SolanaPhpSdk\Util\Signer;
 
 class Transaction
 {

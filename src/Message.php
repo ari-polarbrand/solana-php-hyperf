@@ -1,12 +1,12 @@
 <?php
 
-namespace Tighten\SolanaPhpSdk;
+namespace He426100\SolanaPhpSdk;
 
-use Tighten\SolanaPhpSdk\Exceptions\InputValidationException;
-use Tighten\SolanaPhpSdk\Util\Buffer;
-use Tighten\SolanaPhpSdk\Util\CompiledInstruction;
-use Tighten\SolanaPhpSdk\Util\MessageHeader;
-use Tighten\SolanaPhpSdk\Util\ShortVec;
+use He426100\SolanaPhpSdk\Exceptions\InputValidationException;
+use He426100\SolanaPhpSdk\Util\Buffer;
+use He426100\SolanaPhpSdk\Util\CompiledInstruction;
+use He426100\SolanaPhpSdk\Util\MessageHeader;
+use He426100\SolanaPhpSdk\Util\ShortVec;
 
 class Message
 {

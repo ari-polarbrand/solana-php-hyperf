@@ -1,12 +1,12 @@
 <?php
 
-namespace Tighten\SolanaPhpSdk;
+namespace SolanaPhpSdk;
 
-use Illuminate\Http\Client\Factory as HttpFactory;
-use Illuminate\Http\Client\Response;
-use Tighten\SolanaPhpSdk\Exceptions\GenericException;
-use Tighten\SolanaPhpSdk\Exceptions\InvalidIdResponseException;
-use Tighten\SolanaPhpSdk\Exceptions\MethodNotFoundException;
+use Hyperf\Guzzle\ClientFactory;
+use Psr\Http\Message\ResponseInterface;
+use SolanaPhpSdk\Exceptions\GenericException;
+use SolanaPhpSdk\Exceptions\InvalidIdResponseException;
+use SolanaPhpSdk\Exceptions\MethodNotFoundException;
 
 /**
  * @see https://docs.solana.com/developing/clients/jsonrpc-api
@@ -59,14 +59,19 @@ class SolanaRpcClient
      */
     public function call(string $method, array $params = [], array $headers = [])
     {
-        $response = (new HttpFactory())->acceptJson()->withHeaders($headers)->post(
+        $response = make(ClientFactory::class)->create()->post(
             $this->endpoint,
-            $this->buildRpc($method, $params)
-        )->throw();
+            [
+                'headers' => array_merge([
+                    'Accept' => 'application/json'
+                ], $headers),
+                'json' => $this->buildRpc($method, $params)
+            ]
+        );
 
-        $this->validateResponse($response, $method, $params);
+        $res = $this->validateResponse($response, $method);
 
-        return $response->json('result');
+        return $res['result'];
     }
 
     /**
@@ -85,26 +90,36 @@ class SolanaRpcClient
     }
 
     /**
-     * @param Response $response
+     * @param ResponseInterface $response
      * @param string $method
      * @param array $params
      * @throws GenericException
      * @throws InvalidIdResponseException
      * @throws MethodNotFoundException
      */
-    protected function validateResponse(Response $response, string $method, array $params): void
+    protected function validateResponse(ResponseInterface $response, string $method): array
     {
-        if ($response['id'] !== $this->randomKey) {
-            throw new InvalidIdResponseException();
-        }
+        if (($code = $response->getStatusCode()) == '200') {
+            $contents = $response->getBody()->getContents();
+            if ($contents !== false && !empty($contents)) {
+                $res = json_decode($contents, true);
 
-        if (isset($response['error'])) {
-            if ($response['error']['code'] === self::ERROR_CODE_METHOD_NOT_FOUND) {
-                throw new MethodNotFoundException("API Error: Method {$method} not found.");
-            } else {
-                throw new GenericException($response['error']['message']);
+                if ($res['id'] !== $this->randomKey) {
+                    throw new InvalidIdResponseException();
+                }
+
+                if (isset($res['error'])) {
+                    if ($res['error']['code'] === self::ERROR_CODE_METHOD_NOT_FOUND) {
+                        throw new MethodNotFoundException("API Error: Method {$method} not found.");
+                    } else {
+                        throw new GenericException($res['error']['message']);
+                    }
+                }
+                return $res;
             }
+            throw new \Exception("Request failed: Method {$method}");
         }
+        throw new \Exception("Request error: Method {$method}");
     }
 
     /**

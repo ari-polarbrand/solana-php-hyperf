@@ -1,9 +1,9 @@
 <?php
 
-namespace Tighten\SolanaPhpSdk\Tests\Unit;
+namespace He426100\SolanaPhpSdk\Tests\Unit;
 
-use Tighten\SolanaPhpSdk\Tests\TestCase;
-use Tighten\SolanaPhpSdk\Util\ShortVec;
+use He426100\SolanaPhpSdk\Tests\TestCase;
+use He426100\SolanaPhpSdk\Util\ShortVec;
 
 class ShortVecTest extends TestCase
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Tighten\SolanaPhpSdk\Tests;
+namespace He426100\SolanaPhpSdk\Tests;
 
 use Orchestra\Testbench\TestCase as Orchestra;
 
