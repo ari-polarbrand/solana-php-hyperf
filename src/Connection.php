@@ -41,6 +41,15 @@ class Connection extends Program
     }
 
     /**
+     * @param array $pubkeys
+     * @return array
+     */
+    public function getMultipleAccounts(array $pubkeys): array
+    {
+        return $this->client->call('getMultipleAccounts', [$pubkeys, ["encoding" => "jsonParsed"]])['value'];
+    }
+
+    /**
      * NEW: This method is only available in solana-core v1.7 or newer. Please use getConfirmedTransaction for solana-core v1.6
      *
      * @param string $transactionSignature
