@@ -4,9 +4,9 @@ namespace He426100\SolanaPhpSdk;
 
 use Hyperf\Guzzle\ClientFactory;
 use Psr\Http\Message\ResponseInterface;
-use SolanaPhpSdk\Exceptions\GenericException;
-use SolanaPhpSdk\Exceptions\InvalidIdResponseException;
-use SolanaPhpSdk\Exceptions\MethodNotFoundException;
+use He426100\SolanaPhpSdk\Exceptions\GenericException;
+use He426100\SolanaPhpSdk\Exceptions\InvalidIdResponseException;
+use He426100\SolanaPhpSdk\Exceptions\MethodNotFoundException;
 
 /**
  * @see https://docs.solana.com/developing/clients/jsonrpc-api
