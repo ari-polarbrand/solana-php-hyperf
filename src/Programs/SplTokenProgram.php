@@ -2,6 +2,7 @@
 
 namespace He426100\SolanaPhpSdk\Programs;
 
+use Hyperf\utils\Arr;
 use He426100\SolanaPhpSdk\Program;
 use He426100\SolanaPhpSdk\PublicKey;
 use He426100\SolanaPhpSdk\Util\AccountMeta;
@@ -28,6 +29,22 @@ class SplTokenProgram extends Program
                 'encoding' => 'jsonParsed',
             ],
         ]);
+    }
+
+    /**
+     * @param PublicKey $mint
+     * @param PublicKey $owner
+     * @return PublicKey
+     */
+    public static function getAssociatedTokenAccount(PublicKey $mint, PublicKey $owner): PublicKey
+    {
+        $programId = self::programId();
+        $seed = [
+            $owner->toBuffer(),
+            $programId->toBuffer(),
+            $mint->toBuffer()
+        ];
+        return Arr::first(PublicKey::findProgramAddress($seed, new PublicKey(self::ASSOCIATED_TOKEN_PROGRAM_ID)));
     }
 
     /**
