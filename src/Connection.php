@@ -71,6 +71,16 @@ class Connection extends Program
     }
 
     /**
+     * @param string $address
+     * @param int $lamports
+     * @return array
+     */
+    public function requestAirdrop(string $address, int $lamports): string
+    {
+		return $this->client->call('requestAirdrop', [$address, $lamports]);
+	}
+
+    /**
      * @param Transaction $transaction
      * @param Keypair[] $signers
      * @param array $params

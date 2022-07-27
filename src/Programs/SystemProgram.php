@@ -12,6 +12,7 @@ class SystemProgram extends Program
 {
     const PROGRAM_INDEX_CREATE_ACCOUNT = 0;
     const PROGRAM_INDEX_TRANSFER = 2;
+    const LAMPORTS_PER_SOL = 1000000000;
 
     /**
      * Public key that identifies the System program
