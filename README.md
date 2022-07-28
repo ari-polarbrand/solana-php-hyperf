@@ -62,7 +62,35 @@ $instruction = SystemProgram::transfer(
 $transaction = new Transaction(null, null, $fromPublicKey->getPublicKey());
 $transaction->add($instruction);
 
-$txHash = $connection->sendTransaction($transaction, $fromPublicKey);
+$txHash = $connection->sendTransaction($transaction, [$fromPublicKey]);
 ```
 
-Note: This project is in alpha, the code to generate instructions is still being worked on `$instruction = SystemProgram::abc()`
+### Token Transactions
+
+Here is working example of sending a token transfer instruction to the Solana blockchain:
+
+```php
+$client = new SolanaRpcClient(SolanaRpcClient::DEVNET_ENDPOINT);
+$connection = new Connection($client);
+$fromPublicKey = KeyPair::fromSecretKey([...]);
+$toPublicKey = new PublicKey('J3dxNj7nDRRqRRXuEMynDG57DkZK4jYRuv3Garmb1i99');
+$mint = new PublicKey(...);
+
+$source = SplTokenProgram::getAssociatedTokenAccount($mint, $fromPublicKey->getPublicKey())['address'];
+$destination = SplTokenProgram::getAssociatedTokenAccount($mint, $toPublicKey->getPublicKey())['address'];
+
+$instruction = SplTokenProgram::transfer(
+    new PublicKey($source), 
+    new PublicKey($destination),
+    $fromPublicKey->getPublicKey(),
+    $mint,
+    1,
+    0
+);
+
+$transaction = new Transaction(null, null, $fromPublicKey->getPublicKey());
+$transaction->add($instruction);
+
+$txHash = $connection->sendTransaction($transaction, [$fromPublicKey]);
+```
+发送nft代码来自 [https://github.com/verze-app/solana-php-sdk/issues/21](https://github.com/verze-app/solana-php-sdk/issues/21)
