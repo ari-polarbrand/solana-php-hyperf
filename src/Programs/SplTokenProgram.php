@@ -2,7 +2,7 @@
 
 namespace He426100\SolanaPhpSdk\Programs;
 
-use Hyperf\utils\Arr;
+use Hyperf\Utils\Arr;
 use He426100\SolanaPhpSdk\Program;
 use He426100\SolanaPhpSdk\PublicKey;
 use He426100\SolanaPhpSdk\Util\AccountMeta;
