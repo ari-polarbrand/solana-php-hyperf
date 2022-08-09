@@ -4,7 +4,7 @@ namespace He426100\SolanaPhpSdk\Util;
 
 use He426100\SolanaPhpSdk\Exceptions\InputValidationException;
 
-class Commitment
+final class Commitment
 {
     const FINALIZED = 'finalized';
     const CONFIRMED = 'confirmed';

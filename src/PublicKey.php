@@ -10,6 +10,7 @@ use He426100\SolanaPhpSdk\Exceptions\InputValidationException;
 use He426100\SolanaPhpSdk\Util\Buffer;
 use He426100\SolanaPhpSdk\Util\HasPublicKey;
 
+/** @phpstan-consistent-constructor */
 class PublicKey implements HasPublicKey
 {
     const LENGTH = 32;

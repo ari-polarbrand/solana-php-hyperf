@@ -11,7 +11,7 @@ use SplFixedArray;
 /**
  * A convenient wrapper class around an array of bytes (int's).
  */
-class Buffer implements Countable
+final class Buffer implements Countable
 {
     const TYPE_STRING = 'string';
     const TYPE_BYTE = 'byte';

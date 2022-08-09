@@ -5,7 +5,7 @@ namespace He426100\SolanaPhpSdk\Accounts;
 use He426100\SolanaPhpSdk\Borsh\Borsh;
 use He426100\SolanaPhpSdk\Borsh\BorshDeserializable;
 
-class Metadata
+final class Metadata
 {
     use BorshDeserializable;
 

@@ -8,6 +8,7 @@ use He426100\SolanaPhpSdk\Util\HasPublicKey;
 use He426100\SolanaPhpSdk\Util\HasSecretKey;
 
 /**
+ * @phpstan-consistent-constructor
  * An account keypair used for signing transactions.
  */
 class Keypair implements HasPublicKey, HasSecretKey

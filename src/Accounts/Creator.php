@@ -4,7 +4,7 @@ namespace He426100\SolanaPhpSdk\Accounts;
 
 use He426100\SolanaPhpSdk\Borsh;
 
-class Creator
+final class Creator
 {
     use Borsh\BorshDeserializable;
 

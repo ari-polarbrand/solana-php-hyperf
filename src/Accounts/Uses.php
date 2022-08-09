@@ -4,7 +4,7 @@ namespace He426100\SolanaPhpSdk\Accounts;
 
 use He426100\SolanaPhpSdk\Borsh;
 
-class Uses
+final class Uses
 {
     use Borsh\BorshDeserializable;
 
