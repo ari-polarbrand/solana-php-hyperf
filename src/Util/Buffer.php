@@ -197,10 +197,10 @@ final class Buffer implements Countable
     }
 
     /**
-     * @return int|void
+     * @return int
      * @throws InputValidationException
      */
-    public function count()
+    public function count(): int
     {
         return sizeof($this->toArray());
     }
