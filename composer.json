@@ -30,7 +30,6 @@
         "php": "^7.4 || ~8.0",
         "ext-sodium": "*",
         "guzzlehttp/guzzle": "^7.3",
-        "hyperf/config": "^2.2",
         "hyperf/di": "^2.2",
         "hyperf/framework": "^2.2",
         "hyperf/guzzle": "^2.2",
